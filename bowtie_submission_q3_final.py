@@ -118,19 +118,19 @@ fig_premium, total_premium = get_fig_premium(df_invoice)
 fig_policy = get_fig_policy_count(df_policy)
 fig_loss_ratio = get_fig_loss_ratio(df_claim, total_premium)
 
-st.title("Streamlit Columns Example")
+st.title("Bowtie Business Performance Dashboard")
 col_premium, col_policy_issued, col_loss_ratio = st.columns(3)
 
 with st.container():
-    st.header("Column 1")
+    st.header("Premium Received By Month")
     st.pyplot(fig_premium)
 
 with st.container():
-    st.header("Column 2")
+    st.header("Total Policy Issued By Month")
     st.pyplot(fig_policy)
 
 with st.container():
-    st.header("Column 3")
+    st.header("Loss Ratio By Month")
     st.pyplot(fig_loss_ratio)
 
 
