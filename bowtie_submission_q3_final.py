@@ -50,9 +50,9 @@ def get_fig_premium(df_invoice):
     plt.tight_layout()
     plt.bar(total_premium.index, total_premium, width=0.5)
 
-    plt.xlabel('month')
-    plt.ylabel('total amount of premium received')
-    plt.title('amount of premium received per month')
+    plt.xlabel('Month')
+    plt.ylabel('Total amount of premium received (HKD$)')
+    plt.title('Amount of Premium Received by Month')
 
     plt.xticks(rotation=45, ha='right') 
     plt.gca().tick_params(axis='x', which='major', pad=10) 
@@ -70,9 +70,9 @@ def get_fig_policy_count(df_policy):
 
     fig_policy, ax = plt.subplots(figsize=(20, 6))
     plt.bar(policy_count_per_month.index, policy_count_per_month, width=0.5)
-    plt.xlabel('issue date')
-    plt.ylabel('total policy issued')
-    plt.title('total policy issued per month')
+    plt.xlabel('Issue date')
+    plt.ylabel('Total number of policy issued')
+    plt.title('Total Policy Issued by Month')
 
     # Rotate x-axis labels for better readability and adjust alignment
     plt.xticks(rotation=45, ha='right')  # Rotate x-axis labels by 45 degrees and align them to the right
@@ -100,7 +100,7 @@ def get_fig_loss_ratio(df_claim, total_premium):
     plt.bar(loss_ratio_per_month.index, loss_ratio_per_month, width=0.5)
     plt.xlabel('Month')
     plt.ylabel('Loss Ratio')
-    plt.title('Loss Ratio Per Month')
+    plt.title('Loss Ratio By Month')
 
     # Rotate x-axis labels for better readability and adjust alignment
     plt.xticks(rotation=45, ha='right')  # Rotate x-axis labels by 45 degrees and align them to the right
@@ -122,7 +122,7 @@ st.title("Bowtie Business Performance Dashboard")
 col_premium, col_policy_issued, col_loss_ratio = st.columns(3)
 
 with st.container():
-    st.header("Premium Received By Month")
+    st.header("Amount of Premium Received By Month")
     st.pyplot(fig_premium)
 
 with st.container():
